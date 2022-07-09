@@ -47,6 +47,7 @@ a{
 .header__top{
     display: flex;
     justify-content: space-between;
+    z-index: 13;
 }
 
 .header__top-logo{
@@ -92,9 +93,14 @@ a{
 }
 
 .get-access__btn--filled{
+    font-family: "GT Eesti Pro Display Medium";
+    font-size: 18px;
+    line-height: 25px;
     background-color: #446DF6;
     border: none;
     color: #EEEEEE;
+    width: 240px;
+    height: 60px;
 }
 
 .get-access__btn--filled:hover{
@@ -138,7 +144,7 @@ a{
 }
 
 .start{
-    margin-bottom: 35px;
+    margin: -30px 0 35px;
 }
 
 .start__inner{
@@ -398,7 +404,6 @@ a{
     background: #F7F8FD;
     border-radius: 30px;
     max-width: 50px;
-    cursor: pointer;
 }
 
 .slider__arrow--mr20px{
@@ -452,6 +457,7 @@ a{
 
 .slider__arrow--blue{
     background: #446DF6;
+    cursor: pointer;
 }
 
 .slider__arrow--white::before,
@@ -485,21 +491,200 @@ a{
     color: #E9ECF5;
 }
 
+.popup{
+    position: fixed;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease 0s;
+}
 
+.popup.open{
+    opacity: 1;
+    visibility: visible;
+}
 
+.popup__body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
 
+.popup__content{
+    position: relative;
+    background-color: #FFF;
+    color: #141B41;
+    max-width: 480px;
+    height: 800px;
+    padding: 40px;
+    transition: all .5s ease 0s;
+    opacity: 0;
+    transform: translate(0px, -100%);
+}
 
+.popup.open .popup__content{
+    opacity: 1;
+    transform: translate(0px, 0%);
+}
 
+.popup__close{
+    position: absolute;
+    top: 39px;
+    right: 35px;
+    width: 12px;
+    height: 12px;
+}
+.popup__close::before{
+    content: "";
+    display: block;
+    width: 15px;
+    height: 2px;
+    background-color: #72727E;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 5px;
+    left: -1.5px;
+    z-index: 13;
+}
+.popup__close::after{
+    content: "";
+    display: block;
+    width: 15px;
+    height: 2px;
+    background-color: #72727E;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 5px;
+    left: -1.5px;
+    z-index: 13;
+}
 
+.popup__title{
+    font-family: "GT Eesti Pro Display Medium";
+    font-size: 31px;
+    line-height: 40px;
+    text-align: center;
+    color: #141B41;
+    margin: 44px 20px 75px;
+}
 
+.popup__form{
+    width: 100%;
+}
 
+.popup__form-input-inner{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 1px solid #E9ECF5;
+    border-radius: 10px;
+}
 
+.popup__form-input{
+    max-width: 375px;
+    width: 100%;
+    height: 64px;
+    font-weight: 350;
+    font-size: 18px;
+    line-height: 22px;
+    color: #C0C0C0;
+    border-left: 1px solid #E9ECF5;
+    padding: 20px 0 20px 20px;
+}
 
+.popup__form-input::placeholder{
+    color: #C0C0C0;
+}
 
+.popup__form-input-img{
+    margin: 23px;
+}
 
+.popup__form-input-checkbox-inner{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
+.popup__form-input-checkbox{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    width: 24px;
+    height: 24px;
+    z-index: 15;
+}
 
+.popup__form-input-checkbox-checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #FFFFFF;
+    border: 2px solid #E9ECF5;
+    border-radius: 6px;
+}
 
+/* Create the checkmark/indicator (hidden when not checked) */
+.popup__form-input-checkbox-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+/* Show the checkmark when checked */
+.popup__form-input-checkbox:checked ~ .popup__form-input-checkbox-checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.popup__form-input-checkbox-checkmark:after {
+    left: 7px;
+    top: 2px;
+    width: 7px;
+    height: 12px;
+    border: solid #446DF6;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    transform: rotate(35deg);
+}
+
+.popup__form-input-checkbox-text{
+    line-height: 22px;
+    margin: 2px 0 0 40px;
+}
+
+.popup__form-button-inner{
+    margin: 45px auto;
+    text-align: center;
+}
+
+.popup__politic{
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0 12px;
+}
+
+.popup__politic a{
+    text-decoration-line: underline;
+    color: #446DF6;
+}
 
 
 

@@ -30,7 +30,7 @@
                     </ul>
                 </nav>
                 <div class="get-access">
-                    <button class="get-access__btn">Получить доступ</button>
+                    <button class="get-access__btn popup-link">Получить доступ</button>
                 </div>
             </div>
             <div class="header__content">
@@ -43,7 +43,7 @@
                         Мы поможем сохранить ваше время для более интересных занятий, чем стоять в очереди.
                     </div>
                     <div class="get-access">
-                        <button class="get-access__btn get-access__btn--filled">Получить доступ</button>
+                        <button class="get-access__btn get-access__btn--filled popup-link">Получить доступ</button>
                     </div>
                 </div>
                 <div class="header__content-images">
@@ -190,7 +190,7 @@
                 </div>
             </div>
             <div class="get-access partner__get-access">
-                <button class="get-access__btn get-access__btn--filled">Стать партнером</button>
+                <button class="get-access__btn get-access__btn--filled popup-link">Стать партнером</button>
             </div>
         </div>
     </section>
@@ -375,12 +375,52 @@
                     </ul>
                 </nav>
                 <div class="get-access">
-                    <button class="get-access__btn get-access__btn--white">Получить доступ</button>
+                    <button class="get-access__btn get-access__btn--white popup-link">Получить доступ</button>
                 </div>
             </div>
         </div>
     </footer>
-
+    <div class="popup" id="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="" class="popup__close"></a>
+                <div class="popup__title">
+                    Стань нашим партнером
+                    и начни зарабатывать: 
+                </div>
+                <form class="popup__form">
+                    <div class="popup__form-input-inner">
+                        <img class="popup__form-input-img" src="./images/popup-form-1.png" alt="#">
+                        <input class="popup__form-input" type="text" placeholder="Введите имя">
+                    </div>
+                    <div class="popup__form-input-inner">
+                        <img class="popup__form-input-img" src="./images/popup-form-2.png" alt="#">
+                        <input class="popup__form-input" type="text" placeholder="E-mail">
+                    </div>
+                    <div class="popup__form-input-inner">
+                        <img class="popup__form-input-img" src="./images/popup-form-3.png" alt="#">
+                        <input class="popup__form-input" type="number" placeholder="Номер телефона">
+                    </div>
+                    <div class="popup__form-input-checkbox-inner">
+                        <input class="popup__form-input-checkbox" type="checkbox" id="checkbox-1">
+                        <span class="popup__form-input-checkbox-checkmark"></span>
+                        <label class="popup__form-input-checkbox-text" for="checkbox-1">Я хочу получать новости на почтовый адрес</label>
+                    </div>
+                    <div class="popup__form-input-checkbox-inner">
+                        <input class="popup__form-input-checkbox" type="checkbox" id="checkbox-2">
+                        <span class="popup__form-input-checkbox-checkmark"></span>
+                        <label class="popup__form-input-checkbox-text" for="checkbox-2">Я согласен учавствовать в сборе данных</label>
+                    </div>
+                    <div class="get-access popup__form-button-inner">
+                        <button class="get-access__btn get-access__btn--filled popup__form-button" type="submit">Получить доступ</button>
+                    </div>
+                </form>
+                <div class="popup__politic">
+                    Нажимая кнопку Вы принимаете <a href="#">политику конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
