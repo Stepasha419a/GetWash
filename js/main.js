@@ -81,6 +81,7 @@ $(function() {
         } else {                                   // apply position: static
             $('.header__top').css({                      // if you scroll above it
                 position: 'static',
+                justifyContent: 'space-between',
                 height: '224px'
             });
             $('.header__content').css({
