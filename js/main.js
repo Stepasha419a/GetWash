@@ -1,4 +1,52 @@
 $(function() {
+
+    // header position fixed
+
+    $(window).scroll(function() {
+
+        var currentScroll = $(window).scrollTop();
+
+        if (currentScroll >= 200) {
+            $('.header__top').css({
+                position: 'fixed',
+                top: '0',
+                left: '0',
+                justifyContent: 'space-around',
+                width: '100%',
+                backgroundColor: '#FFFFFF',
+                height: '100px'
+            });
+            $('.header__content').css({
+                paddingTop: '224px'
+            })
+        } else {
+            $('.header__top').css({
+                position: 'static',
+                justifyContent: 'space-between',
+                height: '224px'
+            });
+            $('.header__content').css({
+                paddingTop: '0'
+            })
+        }
+
+    });
+
+    // mobile-menu
+
+    const menu = document.querySelector('.mobile-menu')
+    //const menuButtonOpen = document.querySelector
+    const menuButtonClose = document.querySelector('#close-mobile-menu')
+    const menuButtonOpen = document.querySelector('#open-mobile-menu')
+
+    menuButtonClose.addEventListener('click', () => {
+        menu.classList.remove('opened')
+    })
+    menuButtonOpen.addEventListener('click', () => {
+        menu.classList.add('opened')
+    })
+
+
     // slider
     $('.slider').slick({
         arrows: true,
@@ -58,37 +106,5 @@ $(function() {
     const popupClose = () => {
         popup.classList.remove('open')
     }
-
-    // header position fixed
-
-    $(window).scroll(function() {                  // assign scroll event listener
-
-        var currentScroll = $(window).scrollTop(); // get current position
-
-        if (currentScroll >= 200) {           // apply position: fixed if you
-            $('.header__top').css({                      // scroll to that element or below it
-                position: 'fixed',
-                top: '0',
-                left: '0',
-                justifyContent: 'space-around',
-                width: '100%',
-                backgroundColor: '#FFFFFF',
-                height: '100px'
-            });
-            $('.header__content').css({
-                paddingTop: '224px'
-            })
-        } else {                                   // apply position: static
-            $('.header__top').css({                      // if you scroll above it
-                position: 'static',
-                justifyContent: 'space-between',
-                height: '224px'
-            });
-            $('.header__content').css({
-                paddingTop: '0'
-            })
-        }
-
-    });
 
 })

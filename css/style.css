@@ -31,7 +31,7 @@ a{
 }
 
 .container{
-    width: 1200px;
+    max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -120,6 +120,12 @@ a{
 .header__content-search-title-img{
     width: 100px;
     margin: 15px 0 0 4px;
+}
+
+.header__content-search-title-img--mobile{
+    width: 20px;
+    height: 20px;
+    display: none;
 }
 
 .header__content-search-text{
@@ -686,10 +692,189 @@ a{
     color: #446DF6;
 }
 
+.mobile-menu{
+    display: none;
+    position: fixed;
+    z-index: 15;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease 0s;
+}
 
+.mobile-menu.opened{
+    opacity: 1;
+    visibility: visible;
+}
 
+.mobile-menu__top{
+    height: 60px;
+}
 
+.mobile-menu__top-logo{
+    padding: 20px 0 0 20px;
+}
 
+.mobile-menu__top-toggle-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #E9ECF5;
+    border-bottom: 1px solid #E9ECF5;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-menu__top-toggle-btn--line{
+    display: block;
+    height: 2px;
+    width: 18px;
+    background-color: #72727E;
+    margin-bottom: 4px;
+}
+
+.mobile-menu__items{
+    text-align: center;
+    line-height: 83px;
+}
+
+.mobile-menu__items:first-child{
+    border-top: 1px solid #E9ECF5;
+}
+.mobile-menu__item{
+    border-bottom: 1px solid #E9ECF5;
+}
+
+.mobile-menu__item a{
+    padding: 20px;
+}
+
+.mobile-menu__get-access{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.mobile-menu__get-access-btn{
+    width: 170px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.mobile-menu__become-partner{
+    margin-top: 38px;
+    text-align: center;
+}
+
+.mobile-menu__become-partner a{
+    padding: 20px;
+}
+
+.mobile-menu__become-partner-link{
+    font-family: "GT Eesti Pro Display Medium";
+    font-size: 16px;
+    line-height: 22px;
+    color: #446DF6;
+}
+
+.mobile-menu__bottom-line{
+    position: absolute;
+    top: 59px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #E9ECF5;
+    display: none;
+}
+
+@media(max-width: 1300px) {
+    .header__top{
+        padding: 0 15px;
+        justify-content: space-around !important;
+    }
+}
+
+@media(max-width: 1160px) {
+    .menu,
+    .header__top .get-access,
+    .header__content-images{
+        display: none;
+    }
+    .mobile-menu,
+    .mobile-menu__bottom-line{
+        display: block;
+    }
+
+    .header__top{
+        display: block;
+        height: 60px;
+        padding: 0;
+    }
+    
+    .header__top-logo{
+        padding: 20px 0 56px 0;
+        margin: 0;
+    }
+
+    .header__content{
+        padding-top: 224px;
+    }
+
+    .mobile-menu__top-toggle-btn{
+        display: flex;
+    }
+}
+
+@media(max-width: 620px) {
+    .header__content-search-title-img{
+        display: none;
+    }
+    .header__content-search-title-img--mobile{
+        display: block;
+        margin: 15px auto 17px;
+    }
+    
+    .header__content .get-access{
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .get-access__btn{
+        width: 170px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    
+    .header__content{
+        padding-top: 36px;
+    }
+    .header__content-search-title{
+        font-size: 21px;
+        line-height: 26px;
+        min-width: 300px;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .header__content-search-text{
+        font-size: 16px;
+        line-height: 22px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
 
 
 
