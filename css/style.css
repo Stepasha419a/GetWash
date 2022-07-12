@@ -1017,6 +1017,12 @@ a{
     }
 }
 
+@media(max-height: 720px) {
+    .header{
+        height: 800px;
+    }
+}
+
 @media(max-width: 680px) {
     .header{
         height: 520px;
@@ -1252,79 +1258,5 @@ a{
     .start__img-bg--mobile {
         top: -20px;
         height: 740px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-height: 720px) {
-    .header{
-        height: 800px;
     }
 }
