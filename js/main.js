@@ -7,6 +7,7 @@ $(function() {
         var currentScroll = $(window).scrollTop();
 
         if (currentScroll >= 200) {
+            document.querySelector('.header').classList.add('fixed')
             $('.header__top').css({
                 position: 'fixed',
                 top: '0',
@@ -20,6 +21,7 @@ $(function() {
                 paddingTop: '224px'
             })
         } else {
+            document.querySelector('.header').classList.remove('fixed')
             $('.header__top').css({
                 position: 'static',
                 justifyContent: 'space-between',
@@ -51,7 +53,7 @@ $(function() {
     $('.slider').slick({
         arrows: true,
         fade: true,
-        autoplay: true,
+        autoplay: false,
         infinite: false,
         autoplaySpeed: 3000,
         prevArrow: $('.slider__arrow-prev'),
