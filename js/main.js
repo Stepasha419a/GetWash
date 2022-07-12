@@ -53,7 +53,7 @@ $(function() {
     $('.slider').slick({
         arrows: true,
         fade: true,
-        autoplay: false,
+        autoplay: true,
         infinite: false,
         autoplaySpeed: 3000,
         prevArrow: $('.slider__arrow-prev'),
