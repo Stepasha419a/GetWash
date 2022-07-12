@@ -50,17 +50,19 @@ $(function() {
 
 
     // slider
+
     $('.slider').slick({
         arrows: true,
         fade: true,
         autoplay: true,
         infinite: false,
         autoplaySpeed: 3000,
-        prevArrow: $('.slider__arrow-prev'),
-        nextArrow: $('.slider__arrow-next'),
+        prevArrow: $('.arrow-prev'),
+        nextArrow: $('.arrow-next'),
     })
 
     // slider arrows-color logic
+
     const arrowItems = document.querySelectorAll('.slider__arrow')
     for(let i = 0; i < arrowItems.length; i++) {
         if(i > 1 && i < arrowItems.length - 2) {
